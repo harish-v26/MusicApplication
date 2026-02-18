@@ -8,12 +8,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCW27uZUjDuRydbadbCjuv54OnFobVDNqA",
-  authDomain: "music-application-5ca2d.firebaseapp.com",
-  projectId: "music-application-5ca2d",
-  storageBucket: "music-application-5ca2d.firebasestorage.app",
-  messagingSenderId: "596135483938",
-  appId: "1:596135483938:web:3ea9c59becc2a2ea62c87b"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 
 // Initialize Firebase
