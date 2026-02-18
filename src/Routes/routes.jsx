@@ -1,0 +1,81 @@
+import { createBrowserRouter } from "react-router-dom";
+import Layout from "../layout/layout";
+import Home from "../auth/Home";
+import Login from "../auth/login";
+import Register from "../auth/Register";
+import ResetPassword from "../auth/ResetPassword";
+import ProfileContainer from "../components/UserProfile/ProfileContainer";
+import MyAccount from "../components/UserProfile/MyAccount";
+import AddProfile from "../components/UserProfile/AddProfile";
+import UploadProfilePhoto from "../components/UserProfile/UploadProfilePhoto";
+import ChangePassword from "../components/UserProfile/ChangePassword";
+import DeleteAccount from "../components/UserProfile/DeleteAccount";
+import AdminContainer from "../admin/AdminContainer";
+import CreateAlbum from "../admin/album/CreateAlbum";
+
+let myRoutes = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+        {
+            index:true,
+            element: <Home/>
+        },
+      {
+        path: "/auth/login",
+        element: <Login/>
+      },
+      {
+        path: "/auth/register",
+        element: <Register/>
+      },
+      {
+        path:"/auth/reset-password",
+        element:<ResetPassword/>
+      },
+      {
+        path:"/admin",
+        element:<AdminContainer/>,
+        children:[
+          {
+            path:"create-album",
+            element:<CreateAlbum/>
+          }
+        ]
+      },
+      {
+        path:"/user/profile",
+        element:<ProfileContainer/>,
+        children:[
+          {
+            index:true,
+            element:<MyAccount/>
+          },
+          {
+            path:"add-profile",
+            element:<AddProfile/>
+          },
+          {
+            path:"upload-profile-photo",
+            element:<UploadProfilePhoto/>
+          },
+          {
+            path:"change-password",
+            element:<ChangePassword/>
+          },
+          {
+            path:"delete-account",
+            element:<DeleteAccount/>
+          }
+        ]
+      },
+      {
+        path: "*",
+        element: <h1>404 error</h1>,
+      },
+    ],
+  },
+]);
+
+export default myRoutes;
